@@ -1,0 +1,2 @@
+PORT=3000
+MONGO_URI=mongodb://seuuser:suasenha@ac-6tpxzte-shard-00-00.5zvtcxx.mongodb.net:27017,ac-6tpxzte-shard-00-01.5zvtcxx.mongodb.net:27017,ac-6tpxzte-shard-00-02.5zvtcxx.mongodb.net:27017/?ssl=true&replicaSet=atlas-2cmxvc-shard-0&authSource=admin&appName=apiContatos
