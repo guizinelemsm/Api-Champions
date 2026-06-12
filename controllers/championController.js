@@ -46,3 +46,35 @@ exports.adicionarGame = async (req, res) => {
     res.status(400).json({ erro: error.message });
   }
 };
+
+exports.atualizarChampion = async (req, res) => {
+  try {
+    const champion = await Champion.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+
+    if (!champion) {
+      return res.status(404).json({ mensagem: 'Champion não encontrado' });
+    }
+
+    res.json(champion);
+  } catch (error) {
+    res.status(400).json({ erro: error.message });
+  }
+};
+
+exports.deletarChampion = async (req, res) => {
+  try {
+    const champion = await Champion.findByIdAndDelete(req.params.id);
+
+    if (!champion) {
+      return res.status(404).json({ mensagem: 'Champion não encontrado' });
+    }
+
+    res.json({ mensagem: 'Champion removido com sucesso' });
+  } catch (error) {
+    res.status(400).json({ erro: error.message });
+  }
+};
